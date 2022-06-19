@@ -1,0 +1,37 @@
+//- h1 Hola somos Arquitectura soft 
+//- p desde PUG
+//- p=viajes
+extends ./layout/index
+
+block slider
+     .slider
+          h1 Rio de Janeiro 
+          em aventura #{nombre}
+
+
+block contenido
+     main.container.mt-5 
+          h2.text-center.mb-5 Sobre Nosotros
+          .row           
+               .col-md-6
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum risus eu pulvinar rhoncus. Ut vitae pulvinar orci, in facilisis sapien. Nullam ut metus ac nibh condimentum volutpat. Nulla a odio a quam vulputate porttitor. Nulla felis elit, maximus vel vehicula non, vestibulum nec purus. Proin et elit venenatis, faucibus leo ut, elementum elit. 
+                    p Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent sollicitudin nunc sem. In tincidunt lectus lorem. Nulla sagittis ligula vel blandit volutpat. Phasellus quis accumsan felis. Aenean vitae nisl imperdiet, mollis nunc id, sollicitudin eros.  
+               .col-md-6
+                    img(src="/img/inicio_nosotros.jpg", alt="sobre nosotros", class="img-fluid")
+
+
+          include ./layout/bloque_viajes   
+     
+     .descuento
+          .container 
+               .row 
+                    .cold-md-6 
+                         .contenido
+                              h3 5% de Descuento 
+                              p.titulo Viaje a Canada                               
+                              p.fecha 20 de Junio de 2022 - 28 de Junio de 2022
+                              p.precio 2.500 €
+
+     .container 
+          h2.mt-5.text-center Comentarios
+          include ./layout/bloque_comentarios

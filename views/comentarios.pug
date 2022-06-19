@@ -1,0 +1,34 @@
+extends ./layout/index
+
+block contenido
+     main.container.mt-5 
+          h1.text-center.mt-5 #{pagina}
+          .row 
+          blockquote.text-center Lee sobre nuestros clientes y sus experiencias
+
+          //p= JSON.stringify(comentarios)
+          
+          include ./layout/bloque_comentarios
+
+          .row  
+               .col-md-12      
+                    h2.d-block.w-100.text-center Escribe un comentario   
+          
+                    if(errores)
+                         each error in errores
+                              .alert.col.alert-danger.text-center= error.mensaje
+
+          .row.justify-content-center.col
+               .col-md-8 
+                    form(action="/comentarios" method="POST")
+                         .form-group
+                              label(for="nombre") Nombre
+                              input#nombre(type="text", placeholder="Tu nombre", name="nombre", class="form-control", value= nombre )
+                         .form-group 
+                              label(for="correo") Correo Electrónico
+                              input#correo(type="email", placeholder="Tu correo", name="correo", class="form-control", value= correo)
+                         .form-group 
+                              label(for="mensaje") Mensaje
+                              textarea#mensaje(type="email", placeholder="Tu mensaje", name="mensaje", rows=3, class="form-control")= mensaje
+                         
+                         input.btn.btn-success.btn-block(type="submit")
